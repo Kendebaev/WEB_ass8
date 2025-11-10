@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .navbar {
+      background-color: #2A9D8F;
+    }
+    .navbar a, .navbar-brand {
+      color: white !important;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .btn-book {
+      background-color: #E76F51;
+      color: white;
+      border: none;
+    }
+    .btn-book:hover {
+      background-color: #cf5b3e;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80') center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px black;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .tour-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .tour-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .tour-box h5 {
+      margin-top: 10px;
+    }
+    .btn-learn {
+      background-color: #E76F51;
+      color: white;
+      border: none;
+      margin-bottom: 15px;
+    }
+    footer {
+      background-color: #2A9D8F;
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header (SAME ON EVERY PAGE) -->
+  <nav class="navbar navbar-expand-lg px-4">
+    <a class="navbar-brand fw-bold" href="index.html">ExploreWorld</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white active" href="index.html"><strong>Home</strong></a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="page2.html">Tours</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="page3.html">Tour Details</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="page4.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="page5.html">Contact</a></li>
+      </ul>
+      <button class="btn btn-book ms-3" data-bs-toggle="modal" data-bs-target="#bookModal">Book Now</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    Explore the World with Us
+  </div>
+
+  <!-- TOURS SECTION -->
+  <div class="container my-5">
+    <h3 class="text-center mb-4">Popular Tours</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="tour-box">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="">
+          <h5>Paris Getaway</h5>
+          <p>$799</p>
+          <button class="btn btn-learn">Learn More</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tour-box">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="">
+          <h5>Bali Adventure</h5>
+          <p>$999</p>
+          <button class="btn btn-learn">Learn More</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tour-box">
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=60" alt="">
+          <h5>Swiss Alps Escape</h5>
+          <p>$1200</p>
+          <button class="btn btn-learn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="container my-5 text-center">
+    <h3>Why Choose Us</h3>
+    <div class="row mt-4">
+      <div class="col-md-3"><p>✅ Best Prices</p></div>
+      <div class="col-md-3"><p>🌍 Worldwide Tours</p></div>
+      <div class="col-md-3"><p>⭐ Trusted Reviews</p></div>
+      <div class="col-md-3"><p>📞 24/7 Support</p></div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="container my-5 text-center">
+    <h3>Customer Reviews</h3>
+    <div id="review" class="mt-3"></div>
+  </div>
+
+  <!-- EMAIL SIGNUP -->
+  <div class="container text-center mb-5">
+    <h4>Get Travel Deals in Your Inbox</h4>
+    <input type="email" class="form-control w-50 mx-auto" placeholder="Enter your email">
+    <button class="btn btn-learn mt-2">Subscribe</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center">
+      <p>© 2025 Travel Explorer | All Rights Reserved</p>
+      <p>Email: info@travelexplorer.com | Phone: +7 777 123 4567</p>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2A9D8F; color:white;">
+          <h5 class="modal-title">Book Your Trip</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Please contact us and we’ll call you back soon!</p>
+          <form id="bookingForm">
+            <input type="text" class="form-control mb-2" placeholder="Your Name" required>
+            <input type="tel" class="form-control mb-2" placeholder="Your Phone" required>
+            <button type="submit" class="btn btn-learn w-100">Submit</button>
+          </form>
+          <div id="thankMsg" class="mt-3 text-success" style="display:none;">Thank you! We'll call you soon.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Auto-sliding reviews
+    const reviews = [
+      '"Amazing experience! Highly recommend!" - Aigerim',
+      '"Everything was perfectly organized!" - Daniyar',
+      '"Loved every moment of our Bali trip!" - Zhanar'
+    ];
+    let i = 0;
+    function showReview() {
+      $('#review').fadeOut(400, function() {
+        $(this).text(reviews[i]).fadeIn(400);
+      });
+      i = (i + 1) % reviews.length;
+    }
+    showReview();
+    setInterval(showReview, 3000);
+
+    // Booking form behavior
+    $('#bookingForm').on('submit', function(e){
+      e.preventDefault();
+      $('#thankMsg').show();
+      setTimeout(() => {
+        $('#bookModal').modal('hide');
+        $('#thankMsg').hide();
+        $('#bookingForm')[0].reset();
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
